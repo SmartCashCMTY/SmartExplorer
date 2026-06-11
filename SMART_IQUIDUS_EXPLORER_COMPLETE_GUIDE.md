@@ -210,7 +210,7 @@ Install MongoDB 8.0 for Ubuntu 24.04:
 
 ```bash
 sudo install -d -m 0755 /etc/apt/keyrings
-curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg --dearmor -o /etc/apt/keyrings/mongodb-server-8.0.gpg
+curl -fsSL https://pgp.mongodb.com/server-8.0.asc | sudo gpg --dearmor -o /etc/apt/keyrings/mongodb-server-8.0.gpg
 echo 'deb [ arch=amd64,arm64 signed-by=/etc/apt/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse' | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
 sudo apt update
 sudo apt install -y mongodb-org
@@ -232,7 +232,7 @@ Download SmartCash Core 3.0.0 Linux binaries from GitHub:
 
 ```bash
 cd /tmp
-curl -fLO https://github.com/SmartCashCMTY/SmartNode/releases/download/v3.0.0/smartcash3-3.0.0-x86_64-linux-gnu.tar.gz
+curl -fLO https://github.com/SmartCashCMTY/Node-Client-Wallet/releases/download/v3.0.0/smartcash3-3.0.0-x86_64-linux-gnu.tar.gz
 printf '%s  %s\n' '5695288db0b5a475b2e2865c9b8b1c247b4494ccf7d8ac59ab6a16e0068dbd77' 'smartcash3-3.0.0-x86_64-linux-gnu.tar.gz' | sha256sum -c -
 tar -xzf smartcash3-3.0.0-x86_64-linux-gnu.tar.gz
 sudo install -m 0755 linux-x86_64/smartcashd /usr/local/bin/smartcashd
