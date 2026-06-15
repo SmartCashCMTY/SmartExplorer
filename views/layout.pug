@@ -277,12 +277,8 @@ html
       .col-md-4.navbar-nav
         ul.nav.justify-content-center
           li.text-center(style='margin-left:0;margin-right:0;')
-            p(style='')
-              span.nav-link.poweredby(style='white-space:nowrap;color:#fff;')
-                | Community hosting sponsored by The earea Company ISA | 
-                a(href='https://www.earea.de/impressum/', target='_blank', rel='noopener noreferrer', style='color:#fff;') Impressum
-                |  | 
-                a(href='https://www.earea.de/datenschutz/', target='_blank', rel='noopener noreferrer', style='color:#fff;') Datenschutz
+            p
+              a.nav-link.poweredby(href='https://github.com/iquidus/explorer', target='_blank') Powered by Iquidus Explorer v#{settings.iquidus_version}
       .col-md-4.navbar-nav
         ui.nav.justify-content-end
           label#lblBlockcount.badge.badge-pill.nav-link
