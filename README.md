@@ -55,10 +55,11 @@ All rights to original components, trademarks, logos, source code, and documenta
 The original creator and relevant open-source contributors should be acknowledged appropriately.
 
 ## License
-SmartCash Core is released under the MIT License. See COPYING for details.
-Third-party components and libraries retain their respective licenses.
-If the license of any component cannot be clearly determined, please check the original project.
-
+SmartCash Core is released under the MIT License. See [COPYING](COPYING).
+The Iquidus Explorer component is Copyright (c) 2015 Iquidus Technology / Luke Williams.
+See https://github.com/iquidus/explorer for the Iquidus Explorer license terms.
+Additional third-party components (MongoDB, Node.js, Nginx) each retain their own licenses.
+See their respective project pages for details.
 ## Disclaimer
 This software is provided "as is", without warranty of any kind, express or implied. Use at your own risk.
 The authors and contributors assume no liability for:
