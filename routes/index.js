@@ -19,19 +19,20 @@ function get_smartcash_price(cb) {
     return cb(smartcashPriceCache.price);
   }
 
-  var req = https.get('https://coinmarketcap.com/currencies/smartcash/', {
+  var req = https.get('https://api.coingecko.com/api/v3/simple/price?ids=smartcash&vs_currencies=usd', {
     headers: { 'User-Agent': 'Mozilla/5.0' },
     timeout: 15000
   }, function(response) {
     var body = '';
     response.on('data', function(chunk) { body += chunk; });
     response.on('end', function() {
-      var marker = 'The live SmartCash price today is $';
-      var index = body.indexOf(marker);
-      var match = index >= 0 ? body.slice(index + marker.length, index + marker.length + 32).match(/^[0-9.]+/) : null;
-      if (match) {
-        smartcashPriceCache = { price: parseFloat(match[0]), updated: now };
-      }
+      try {
+        var data = JSON.parse(body);
+        var price = data.smartcash && data.smartcash.usd ? parseFloat(data.smartcash.usd) : null;
+        if (price && price > 0) {
+          smartcashPriceCache = { price: price, updated: now };
+        }
+      } catch(e) {}
       return cb(smartcashPriceCache.price || 0);
     });
   });
